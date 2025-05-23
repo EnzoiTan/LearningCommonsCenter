@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin - Manage Announcements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      padding: 2rem;
+    }
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      gap: 2rem;
+    }
+    .list-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex: 1;
+      width: max-content;
+    }
+    .form-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      flex: 1;
+      max-height: max-content;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin: 0.5rem 0 1rem;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+        background-color: #367b18;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+        background-color: #367b18;
+    }
+    .announcement {
+      border-bottom: 1px solid #ddd;
+      padding: 0.75rem 0;
+    }
+    .announcement-title {
+      font-weight: bold;
+      margin-bottom: 0.25rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .btn-group button {
+      flex: 1;
+    }
+    .btn-delete {
+      background-color: #d32f2f;
+    }
+    .btn-delete:hover {
+      background-color: #b71c1c;
+    }
+    .btn-edit {
+      background-color: #292929;
+    }
+    .btn-edit:hover {
+      background-color: #343434;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Form Container -->
+        <div class="form-container">
+      <h2 id="form-title">Add Announcement</h2>
+      <form id="announcementForm">
+        <input type="text" id="title" name="title" placeholder="Title" required />
+        <textarea id="content" name="content" rows="4" placeholder="Content" required></textarea>
+        <button type="submit">Submit</button>
+        <button type="button" id="cancelEditButton" style="display: none;">Cancel Edit</button>
+      </form>
+    </div>
+
+    <!-- Announcement List -->
+    <div class="list-container">
+      <h2>Existing Announcements</h2>
+      <div id="announcementList"></div>
+    </div>
+  </div>
+
+  <!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
+    import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBG5W4CYRdpnwUPhr6ZgDawiBMjX9glZwc",
+      authDomain: "lcc-updates.firebaseapp.com",
+      projectId: "lcc-updates",
+      storageBucket: "lcc-updates.appspot.com",
+      messagingSenderId: "59064583935",
+      appId: "1:59064583935:web:8393498a3eeaa7197a6eca"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const announcementRef = collection(db, 'lcc-annoucement');
+
+    let editingId = null;
+
+    // Load announcements
+    async function loadAnnouncements() {
+      const list = document.getElementById('announcementList');
+      list.innerHTML = '';
+      const snapshot = await getDocs(announcementRef);
+      snapshot.forEach(docSnap => {
+        const data = docSnap.data();
+        const div = document.createElement('div');
+        div.className = 'announcement';
+        div.innerHTML = `
+          <div class="announcement-title">${data.title}</div>
+          <div class="announcement-content">${data.content}</div>
+          <div class="btn-group">
+            <button class="btn-edit" onclick="editAnnouncement('${docSnap.id}', \`${data.title}\`, \`${data.content}\`)">Edit</button>
+            <button class="btn-delete" onclick="deleteAnnouncement('${docSnap.id}')">Delete</button>
+          </div>
+        `;
+        list.appendChild(div);
+      });
+    }
+
+    // Expose functions globally
+    window.editAnnouncement = function (id, title, content) {
+      document.getElementById('title').value = title;
+      document.getElementById('content').value = content;
+      document.getElementById('form-title').textContent = 'Edit Announcement';
+      editingId = id;
+    };
+
+    window.deleteAnnouncement = async function (id) {
+      if (confirm('Are you sure you want to delete this announcement?')) {
+        await deleteDoc(doc(db, 'lcc-annoucement', id));
+        loadAnnouncements();
+      }
+    };
+
+    document.getElementById('announcementForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const title = document.getElementById('title').value;
+      const content = document.getElementById('content').value;
+
+      if (editingId) {
+        const ref = doc(db, 'lcc-annoucement', editingId);
+        await updateDoc(ref, { title, content });
+        editingId = null;
+        document.getElementById('form-title').textContent = 'Add Announcement';
+      } else {
+        await addDoc(announcementRef, {
+          title,
+          content,
+          createdAt: serverTimestamp()
+        });
+      }
+
+      document.getElementById('announcementForm').reset();
+      loadAnnouncements();
+    });
+
+    loadAnnouncements();
+
+    // Expose functions globally
+window.editAnnouncement = function (id, title, content) {
+  document.getElementById('title').value = title;
+  document.getElementById('content').value = content;
+  document.getElementById('form-title').textContent = 'Edit Announcement';
+  document.getElementById('cancelEditButton').style.display = 'block'; // Show the "Cancel Edit" button
+  editingId = id;
+};
+
+document.getElementById('cancelEditButton').addEventListener('click', function () {
+  // Reset the form and switch back to "Add Announcement" mode
+  document.getElementById('announcementForm').reset();
+  document.getElementById('form-title').textContent = 'Add Announcement';
+  document.getElementById('cancelEditButton').style.display = 'none'; // Hide the "Cancel Edit" button
+  editingId = null;
+});
+  </script>
+</body>
+</html>
