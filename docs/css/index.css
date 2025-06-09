@@ -828,15 +828,16 @@ body {
   i {
     font-size: 1em !important;
   }
-  span {
-    font-size: 0.9em !important;
-  }
-  .announcement-date {
-    font-size: 0.8em !important;
-    margin-top: -5px !important;
-  }
   .update-content {
+    font-size: 0.85em !important;
     padding: 12px 18px !important;
+  }
+  .rationale {
+    font-size: 0.9em !important;
+    padding: 30px !important;
+  }
+  .rationale-title {
+    font-size: 1.2em !important;
   }
   .content2 {
     flex-direction: column;
@@ -854,12 +855,30 @@ body {
   .slides img {
     width: 100%;
   }
+  .MVGO {
+    padding: 30px 0 30px 0 !important;
+  }
+  .MVGO h3 {
+    font-size: 1.3em !important;
+    margin-bottom: 10px !important;
+    width: 100% !important;
+  }
   .MVGO .mvgo-container {
     grid-template-columns: 1fr;
     gap: 30px;
   }
   .mvgo-image {
     max-width: 100%;
+  }
+  .facts {
+    font-size: 1em !important;
+    padding: 30px 20px 30px 20px !important;
+  }
+  .facts-title {
+    font-size: 1.1em !important;
+  }
+  .facts-subtitle {
+    font-size: 0.9em !important;
   }
   footer {
     flex-direction: column;

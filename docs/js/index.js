@@ -204,7 +204,7 @@ async function fetchAnnouncements() {
     const announcementHTML = `
       <p class="update-content">
         <span>${data.title}</span>
-        <span class="announcement-date">${new Date(data.createdAt.seconds * 1000).toLocaleDateString('en-US', {
+        <span class="announcement-date">Posted: ${new Date(data.createdAt.seconds * 1000).toLocaleDateString('en-US', {
           year: 'numeric',
           month: 'long',
           day: 'numeric'
