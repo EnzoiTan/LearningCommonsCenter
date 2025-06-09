@@ -2,7 +2,7 @@
   --primary-color: #8b2c2c;
   --primary-plain-background: rgba(255, 255, 255, 0.33);
   --secondary-plain-background: rgb(236, 236, 236);
-  --secondary-color: #E1AF19;
+  --secondary-color: #e1af19;
   --text-color: #fff;
 }
 
@@ -243,11 +243,11 @@ footer {
 .title-cap {
   font-weight: 600;
   text-transform: uppercase;
-  color: #E1AF19;
+  color: #e1af19;
 }
 
 .cp-link {
-  color: #E1AF19;
+  color: #e1af19;
   font-weight: 600;
 }
 
@@ -332,7 +332,7 @@ footer {
 .pad-style {
   width: 100%;
   height: 5px;
-  background-color: #E1AF19;
+  background-color: #e1af19;
 }
 
 button {
@@ -717,17 +717,18 @@ body {
     display: flex;
     flex-direction: row;
   }
-  .zppsu-logo, .lcc-logo {
-    width: 40px !important;
-    height: 40px !important;
+  .zppsu-logo,
+  .lcc-logo {
+    width: 30px !important;
+    height: 30px !important;
   }
   nav a {
     padding: 10px 20px;
     font-size: 0.9em;
   }
   .lib-name {
-    font-size: 1.2em;
-    text-align: center;
+    margin-top: -10px;
+    font-size: 0.8em !important;
   }
   .logo img {
     width: 50px;
@@ -793,6 +794,13 @@ body {
   .middle-content {
     flex-direction: column;
     align-items: center;
+  }
+  .lcc {
+    display: block !important;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    font-weight: 900;
   }
 }
 /* Tablet (max-width: 1024px) */
@@ -885,7 +893,6 @@ body {
   display: none;
   background: #8b2c2c;
   border: none;
-  font-size: 2rem;
   color: #ffffff;
   margin-left: 1rem;
   cursor: pointer;
@@ -938,18 +945,5 @@ body {
   }
   .navbar-toggler {
     margin: 0;
-  }
-  .lcc {
-    display: block !important;
-    font-size: 1.6em;
-    color: var(--primary-color);
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-weight: 900;
-  }
-  .lib-name {
-    font-size: 1em;
-    color: var(--primary-color);
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-weight: 900;
   }
 }/*# sourceMappingURL=index.css.map */
