@@ -524,7 +524,7 @@ button:active {
     display: block;
     margin: 15vh auto 0 auto;
     max-width: 98vw;
-    max-height: 60vh;
+    max-height: 50vh;
   }
   .title-book {
     font-size: 2rem;
