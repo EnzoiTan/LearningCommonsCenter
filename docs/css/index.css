@@ -833,11 +833,19 @@ body {
     padding: 12px 18px !important;
   }
   .rationale {
-    font-size: 0.9em !important;
+    font-size: 0.8em !important;
     padding: 30px !important;
   }
   .rationale-title {
     font-size: 1.2em !important;
+  }
+  .rationale-desc {
+    font-size: 1.1em !important;
+  }
+  .see-more-btn {
+    font-size: 0.8em !important;
+    padding: 8px 16px !important;
+    margin: 10px 0px 20px 20px !important;
   }
   .content2 {
     flex-direction: column;
@@ -859,9 +867,12 @@ body {
     padding: 30px 0 30px 0 !important;
   }
   .MVGO h3 {
-    font-size: 1.3em !important;
+    font-size: 1.1em !important;
     margin-bottom: 10px !important;
     width: 100% !important;
+  }
+  .MVGO i {
+    font-size: 1em !important;
   }
   .MVGO .mvgo-container {
     grid-template-columns: 1fr;
@@ -888,6 +899,9 @@ body {
   .footer-content footer {
     flex-direction: column;
     gap: 30px;
+  }
+  .cpr p {
+    font-size: 0.8em !important;
   }
   .right-content img {
     width: 90px;
