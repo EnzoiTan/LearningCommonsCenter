@@ -519,7 +519,7 @@ button {
 
 
 // Make sure the gallery is scrollable horizontally on very small screens
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .gallery-group {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -544,6 +544,7 @@ button {
   .title-book {
     font-size: 2rem;
     padding: 5px;
+    order: 1;
   }
 }
 

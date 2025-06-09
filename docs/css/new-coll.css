@@ -504,7 +504,7 @@ button:active {
   display: flex;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .gallery-group {
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -529,5 +529,6 @@ button:active {
   .title-book {
     font-size: 2rem;
     padding: 5px;
+    order: 1;
   }
 }/*# sourceMappingURL=new-coll.css.map */
