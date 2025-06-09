@@ -26,7 +26,7 @@
     display: flex;
     align-items: flex-start;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 20px;
     margin-bottom: 20px;
@@ -167,10 +167,10 @@
     display: flex;
     align-items: flex-start;
     background: #fff;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     padding: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     transition: 0.3s ease;
     width: 100%;
 }
@@ -180,6 +180,7 @@
     color: #8b2c2c;
     margin-right: 20px;
     flex-shrink: 0;
+    margin-top: -5px !important;
 }
 
 .announcement-content {
@@ -218,8 +219,10 @@ h4{
 }
 
 i{
-  font-size: 0.8em !important;
+  font-size: 0.8em !important; 
 }
+
+
 
 .skeleton-announcement {
   display: flex;
