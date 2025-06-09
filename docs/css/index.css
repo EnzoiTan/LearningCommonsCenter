@@ -810,7 +810,17 @@ body {
     font-size: 1em;
   }
   .body-content {
-    margin: 30px;
+    margin: 12px;
+  }
+  h3 {
+    font-size: 1em;
+    margin: 0 !important;
+  }
+  #did-you-know-text {
+    font-size: 0.8em;
+  }
+  .did-you-know {
+    padding: 20px !important;
   }
   .content2 {
     flex-direction: column;
