@@ -1008,6 +1008,25 @@ body {
     margin: 20px;
     flex-direction: column-reverse;
   }
+
+  .announcement-sect {
+    display: flex;
+    flex-direction: column;
+  }
+  .did-you-know {
+    order: 3;
+    margin: 0 ;
+  }
+  .announcement-card {
+    margin-top: 30px !important;
+    order: 1;
+  }
+  .updates{
+    order: 1;
+  }
+  .see-more-btn{
+    order: 1;
+  }
 }
 
 /* Desktop (default styles) */
