@@ -892,6 +892,10 @@ body {
   .right-content img {
     width: 90px;
   }
+  .body-content {
+    margin: 20px;
+    flex-direction: column-reverse;
+  }
 }
 /* Desktop (default styles) */
 @media screen and (min-width: 1025px) {
