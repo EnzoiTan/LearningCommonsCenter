@@ -350,8 +350,14 @@ button:active {
 @media screen and (max-width: 768px) {
   .body-content {
     flex-direction: column;
-    margin: 20px !important;
+    margin: 0px !important;
     align-items: center;
+  }
+  .body-content h1 {
+    font-size: 1.5em !important;
+  }
+  .body-content span {
+    font-size: 0.8em !important;
   }
   .body-content .top-users {
     flex-direction: column;
@@ -366,5 +372,18 @@ button:active {
   .body-content .description {
     padding: 20px;
     font-size: 0.9em;
+  }
+  .description {
+    flex-direction: column-reverse !important;
+    order: 1 !important;
+    width: 100% !important;
+    background-color: #262626;
+    height: -moz-max-content;
+    height: max-content;
+    color: white;
+    padding: 30px;
+    margin: 0 !important;
+    font-size: 1em;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   }
 }/*# sourceMappingURL=top-users.css.map */
