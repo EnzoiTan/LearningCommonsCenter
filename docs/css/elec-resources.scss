@@ -1,0 +1,101 @@
+.hero {
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+      height: 100px;
+      /* Set a fixed height for the hero section */
+      margin-bottom: 25px;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      /* Ensures the image covers the container without stretching */
+      display: block;
+      filter: blur(1px);
+    }
+
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 90%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      flex-wrap: wrap;
+      /* Allows wrapping of items */
+    }
+
+    .elec_img-container {
+      position: relative;
+      margin: 10px;
+      text-align: center;
+      border: solid 2px rgba(56, 56, 56, 0.555);
+    }
+
+    .elec_img {
+      width: 480px;
+      height: 250px;
+      max-width: 500px;
+      max-height: 500px;
+      filter: grayscale(50%);
+      /* Makes the image grayscale */
+      transition: filter 0.3s ease;
+      /* Smooth transition for hover effect */
+      cursor: pointer;
+    }
+
+    .elec_img:hover {
+      filter: grayscale(0%);
+      /* Shows color on hover */
+    }
+
+    .elec_img-text {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: rgba(27, 27, 27, 0.555);
+      /* Semi-transparent black background */
+      color: white;
+      padding: 10px 0;
+      text-shadow: 1px 1px 1px #1f1f1f;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      backdrop-filter: blur(3px);
+      /* Adds a blur effect to the background */
+    }
+
+    @media screen and (max-width: 768px) {
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: max-content;
+            max-width: auto;
+            flex-direction: column;
+            width: 100vw;
+            margin: 0;
+        }
+
+        .elec_img{
+            width: 350px;
+            height: 200px;
+        }
+
+        .hero-text {
+            left: 80%;
+            transform: translate(-50%, -50%);
+            font-size: 1.5em;
+        }
+    }

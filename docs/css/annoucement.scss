@@ -1,0 +1,134 @@
+.body-content {
+    margin: 0;
+    max-height: max-content;
+    height: 100%;
+    display: flex;
+    flex: 1;
+}
+
+.announcement-page {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.announcement-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #8b2c2c;
+}
+
+.announcement-item {
+    display: flex;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+    width: 100%;
+}
+
+.announcement-icon {
+    font-size: 2.2rem;
+    color: #8b2c2c;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.announcement-content {
+    flex: 1;
+}
+
+.announcement-content h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.announcement-content p {
+    margin: 8px 0 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.date-posted {
+    margin-top: -5px !important;
+    font-size: 0.8rem !important;
+    color: #999 !important;
+}
+
+.load-more {
+    margin: 0 !important;
+    border-radius: 3px;
+    padding: 10px 15px 10px 15px !important;
+    width: 30%;
+}
+
+.skeleton-announcement {
+  display: flex;
+  align-items: flex-start;
+  background: #f3f3f3;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 700px;
+  max-width: 700px;
+  animation: skeleton-loading 1.2s infinite linear alternate;
+}
+
+.skeleton-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  margin-right: 20px;
+  flex-shrink: 0;
+  animation: skeleton-loading 1.2s infinite linear alternate;
+}
+
+.skeleton-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50px; // Ensures the skeleton bars are visible
+  gap: 8px;
+}
+
+.skeleton-title,
+.skeleton-date,
+.skeleton-content {
+  display: block;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  animation: skeleton-loading 1.2s infinite linear alternate;
+}
+
+.skeleton-title {
+  width: 60%;
+  height: 18px;
+}
+
+.skeleton-date {
+  width: 40%;
+  height: 12px;
+}
+
+.skeleton-content {
+  width: 100%;
+  height: 32px;
+  margin-bottom: 0;
+}
+
+@keyframes skeleton-loading {
+  0% { background-color: #f3f3f3; }
+  100% { background-color: #e0e0e0; }
+}
