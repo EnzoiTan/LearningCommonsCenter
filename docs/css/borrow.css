@@ -23,21 +23,25 @@ video {
 
 .borrow-info {
   text-align: left !important;
-  margin: 30px 20px !important;
+  margin: 10px 20px 30px 20px !important;
 }
 .borrow-info h1 {
-  font-size: 2rem !important;
+  font-size: 1.8rem !important;
   margin-bottom: 10px !important;
 }
 .borrow-info h1:nth-child(2) {
   margin-top: -20px !important;
-  font-size: 1em !important;
+  font-size: 0.8em !important;
 }
 .borrow-info h2 {
   font-size: 1.2rem !important;
   margin-bottom: 10px !important;
 }
 .borrow-info ul {
+  font-size: 0.8em !important;
   text-align: left !important;
   justify-content: start !important;
+}
+.borrow-info h3 {
+  padding-bottom: 10px;
 }/*# sourceMappingURL=borrow.css.map */
