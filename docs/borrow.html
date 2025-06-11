@@ -69,36 +69,6 @@
     window.onload = fetchAnnouncements;
   </script>
 </head>
-<style>
-  .video-container {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
-  }
-
-  video {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-
-  @media screen and (max-width: 768px) {
-    .borrow-layout {
-      grid-template-columns: 1fr !important;
-      text-align: center;
-    }
-
-    .borrow-info ul {
-      text-align: center;
-    }
-  }
-
-  .body-content {
-    margin: 40px !important;
-  }
-</style>
 
 <body>
   <script type="text/javascript">
@@ -169,8 +139,7 @@
   </nav>
 
   <div class="body-content" style="padding: 2rem;">
-    <div class="borrow-layout"
-      style="display: grid; grid-template-columns: 1fr 0.6fr; gap: 2rem; align-items: center; max-width: 1200px; margin: auto;">
+    <div class="borrow-layout">
 
       <!-- Left side: video -->
       <div class="borrow-video">

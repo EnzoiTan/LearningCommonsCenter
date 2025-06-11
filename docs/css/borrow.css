@@ -1,5 +1,5 @@
 .body-content {
-  margin: 0 !important;
+  margin: 0px !important;
   padding: 10px !important;
 }
 
@@ -7,9 +7,23 @@
   gap: 0 !important;
 }
 
+.video-container {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+video {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 .borrow-info {
   text-align: left !important;
-  margin: 5px 20px !important;
+  margin: 30px 20px !important;
 }
 .borrow-info h1 {
   font-size: 2rem !important;
