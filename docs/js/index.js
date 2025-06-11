@@ -56,7 +56,7 @@ window.addEventListener('resize', () => {
   }
 });
 
-// ...existing code...
+
 
 // Function to move the indicator
 function moveIndicator(link) {

@@ -553,4 +553,24 @@ button {
   .gallery-group {
     justify-content: start;
   }
+
+  .modal{
+    padding: 0;
+    height: 100%;
+  }
+
+  #imageModal.modal .modal-content,
+  #modalImg.modal-content {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
