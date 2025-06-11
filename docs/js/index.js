@@ -20,6 +20,44 @@ const db = getFirestore(app);
 const links = document.querySelectorAll("nav a");
 const indicator = document.querySelector(".indicator");
 
+// ...existing code...
+
+function regroupGalleryGroups() {
+  const track = document.querySelector('.gallery-track');
+  if (!track) return;
+
+  // Only run on mobile
+  if (window.innerWidth > 768) return;
+
+  // Flatten all images into an array
+  const allImgs = Array.from(track.querySelectorAll('.book-img'));
+  // Remove all current groups
+  track.innerHTML = '';
+
+  // Group images into groups of 3
+  for (let i = 0; i < allImgs.length; i += 3) {
+    const group = document.createElement('div');
+    group.className = 'gallery-group';
+    for (let j = i; j < i + 3 && j < allImgs.length; j++) {
+      group.appendChild(allImgs[j]);
+    }
+    track.appendChild(group);
+  }
+}
+
+// Run on load and on resize
+window.addEventListener('DOMContentLoaded', regroupGalleryGroups);
+window.addEventListener('resize', () => {
+  // Optional: reload page on resize to desktop to restore original groups
+  if (window.innerWidth <= 768) {
+    regroupGalleryGroups();
+  } else {
+    window.location.reload(); // reload to restore original HTML
+  }
+});
+
+// ...existing code...
+
 // Function to move the indicator
 function moveIndicator(link) {
   const rect = link.getBoundingClientRect();

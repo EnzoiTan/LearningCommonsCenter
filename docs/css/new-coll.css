@@ -505,30 +505,22 @@ button:active {
 }
 
 @media (max-width: 768px) {
-  .gallery-group {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 4px;
-  }
-  .book-img {
-    width: 80vw;
-    min-width: 120px;
-    max-width: 90vw;
-  }
-  .modal {
-    height: 100vh !important;
-    /* Remove display: flex, align-items, justify-content */
-    /* Center modal image using margin and max-width on .modal-content */
-  }
-  .modal-content {
-    display: block;
-    margin: 15vh auto 0 auto;
-    max-width: 98vw;
-    max-height: 50vh;
-  }
   .title-book {
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 5px;
     order: 1;
+  }
+  .gallery-group {
+    justify-content: center;
+    gap: 10px;
+  }
+  .book-img {
+    width: 30vw;
+  }
+  .gallery-wrapper {
+    padding: 20px 10px 20px 8px;
+  }
+  .gallery-group {
+    justify-content: start;
   }
 }/*# sourceMappingURL=new-coll.css.map */
