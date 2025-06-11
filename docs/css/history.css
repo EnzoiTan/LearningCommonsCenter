@@ -375,6 +375,10 @@ footer {
     flex-direction: column !important;
     margin: 0 10px 10px 10px !important;
   }
+  .history-desc {
+    padding: 30px 20px 30px 20px !important;
+    font-size: 1em !important;
+  }
   .history-title {
     width: 100% !important;
     font-size: 3em !important;
