@@ -459,15 +459,20 @@ button {
 
 @media screen and (max-width: 768px) {
   .body-content{
-    // padding-top: 20px !important;
+    padding: 20px !important;
   }
+
+  p{
+    font-size: 1.0em !important;
+  }
+
   .lib-sections{
     flex-direction: column;
     align-items: center;
   }
 
   .lib-title{
-    font-size: 2em !important;
+    font-size: 1.3em !important;
     // text-align: center;
   }
 
@@ -478,18 +483,22 @@ button {
   gap: 8px;
 }
 
+.lib-content{
+  height: 100px !important;
+}
+
 .carousel-img-container {
   position: relative;
-  width: 180px;
-  height: 120px;
+  width: 180px !important;
+  height: 10px !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .lib-slideshow {
-  width: 100%;
-  height: 100%;
+  width: 100% !important;
+  height: 20% !important;
   object-fit: cover;
   display: block;
 }
