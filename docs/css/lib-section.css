@@ -442,9 +442,6 @@ button:active {
   .body-content {
     padding: 20px !important;
   }
-  p {
-    font-size: 1em !important;
-  }
   .lib-sections {
     flex-direction: column;
     align-items: center;
