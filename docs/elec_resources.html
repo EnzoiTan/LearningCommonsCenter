@@ -14,9 +14,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="/docs/css/index.css" />
-  <link rel="stylesheet" href="/docs/css/elec-resources.css" />
-  <link rel="icon" href="/docs/images/logos/LCC-logo.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/elec-resources.css" />
+  <link rel="icon" href="images/logos/LCC-logo.png" type="image/x-icon" />
   <title>ZPPSU Library | Learning Commons Center</title>
 </head>
 
@@ -37,7 +37,7 @@
   <div class="pattern">
     <!-- <i class="fa-solid fa-clock"></i> -->
   </div>
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar">
     <div class="left">
       <div class="logo">
         <img class="zppsu-logo" src="images/logos/zppsu-logo.png" alt="" />
@@ -49,71 +49,62 @@
       </div>
     </div>
     <div class="right">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu"
-        aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Burger Menu Button -->
+      <button class="navbar-toggler" id="navbarToggler" aria-label="Toggle navigation">
         <span class="fa fa-bars"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="updatesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Updates
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="updatesDropdown">
-              <li><a class="dropdown-item" href="annoucement.html">Annoucement</a></li>
-              <li><a class="dropdown-item" href="activities.html">Activities</a></li>
-              <li><a class="dropdown-item" href="top-users.html">Library Top Users</a></li>
-              <li><a class="dropdown-item" href="https://zppsu.edu.ph/news-and-updates/">ZPPSU Updates</a></li>
-              <li><a class="dropdown-item" href="new-coll.html">New Collection</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Services
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li><a class="dropdown-item" href="borrow.html">Book Borrowing</a></li>
-              <li><a class="dropdown-item" href="elec_resources.html">Electronic Resources</a></li>
-              <li><a class="dropdown-item" href="https://tinyurl.com/EbookRequests">Online Request</a></li>
-              <li><a class="dropdown-item" href="lib-section.html">Library Section</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              About
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-              <li><a class="dropdown-item" href="history.html">Our History</a></li>
-              <li><a class="dropdown-item" href="lib-team.html">The Org</a></li>
-              <li><a class="dropdown-item" href="firebase.html">Data Input</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
+      <nav>
+        <div class="navbar-collapse" id="navbarMenu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Updates</a>
+              <div class="dropdown-content">
+                <a href="annoucement.html">Annoucement</a>
+                <a href="activities.html">Activities</a>
+                <a href="top-users.html">Library Top Users</a>
+                <a href="https://zppsu.edu.ph/news-and-updates/">ZPPSU Updates</a>
+                <a href="new-coll.html">New Collection</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">Services</a>
+              <div class="dropdown-content">
+                <a href="borrow.html">Book Borrowing</a>
+                <a href="elec_resources.html">Electronic Resources</a>
+                <a href="https://tinyurl.com/EbookRequests">Online Request</a>
+                <a href="lib-section.html">Library Section</a>
+              </div>
+            </li>
+            <li class="dropdown">
+              <a href class="dropbtn">About</a>
+              <div class="dropdown-content">
+                <a href="history.html">Our History</a>
+                <a href="lib-team.html">The Org</a>
+                <a href="firebase.html">Data Input</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </nav>
 
   <div class="hero">
-    <img src="/docs/images/elec_resources/hero.jpeg" alt="Hero Image">
+    <img src="images/elec_resources/hero.jpeg" alt="Hero Image">
     <p class="hero-text">Electronic Resources</p>
   </div>
 
   <div class="container">
     <div class="elec_img-container">
       <a href="https://starbooks.ph/login">
-        <img class="elec_img" src="/docs/images/elec_resources/elec_ss.png" alt="Electronic Resource 1">
+        <img class="elec_img" src="images/elec_resources/elec_ss.png" alt="Electronic Resource 1">
         <div class="elec_img-text">Starbooks</div>
       </a>
     </div>
     <div class="elec_img-container">
       <a href="https://www.accessengineeringlibrary.com">
-        <img class="elec_img" src="/docs/images/elec_resources/elec_ss2.png" alt="Electronic Resource 2">
+        <img class="elec_img" src="images/elec_resources/elec_ss2.png" alt="Electronic Resource 2">
         <div class="elec_img-text">AccessEngineering</div>
       </a>
     </div>
@@ -121,13 +112,13 @@
   <div class="container">
     <div class="elec_img-container">
       <a href="https://www.bibliotex.com">
-        <img class="elec_img" src="/docs/images/elec_resources/elec_ss3.png" alt="Electronic Resource 3">
+        <img class="elec_img" src="images/elec_resources/elec_ss3.png" alt="Electronic Resource 3">
         <div class="elec_img-text">Bibliotex</div>
       </a>
     </div>
     <div class="elec_img-container">
       <a href="https://ejournals.ph">
-        <img class="elec_img" src="/docs/images/elec_resources/elec_ss4.png" alt="Electronic Resource 4">
+        <img class="elec_img" src="images/elec_resources/elec_ss4.png" alt="Electronic Resource 4">
         <div class="elec_img-text">Philippine E-Jounal</div>
       </a>
     </div>
@@ -141,7 +132,7 @@
       <div class="left-content">
         <p class="title-cap">ZPPSU Library | Learning Commons Center</p>
         <br />
-        <p>R.T. Lim Blvd, Baliwasan, Zamboanga City, Philippines</p>
+        <p>R.T. Lim Blvd, Baliwasan, Zamboanga City, PH</p>
         <p>0917-651-7802</p>
         <p>zcspc.library@gmail.com</p>
       </div>
@@ -156,8 +147,8 @@
         </div>
       </div>
       <div class="right-content">
-        <img class="footer-zppsu-lg" src="/docs/images/logos/zppsu-logo.png" alt="" />
-        <img class="footer-lcc-lg" src="/docs/images/logos/LCC-logo.png" alt="" />
+        <img class="footer-zppsu-lg" src="images/logos/zppsu-logo.png" alt="" />
+        <img class="footer-lcc-lg" src="images/logos/LCC-logo.png" alt="" />
       </div>
     </footer>
     <div class="cpr">
@@ -165,6 +156,6 @@
     </div>
   </div>
 </body>
-<script type="module" src="/docs/js/index.js"></script>
+<script type="module" src="js/index.js"></script>
 
 </html>
