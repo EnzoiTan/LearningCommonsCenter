@@ -39,11 +39,9 @@ video {
   margin: 10px 20px 30px 20px !important;
 }
 .borrow-info h1 {
-  font-size: 3rem !important;
   margin-bottom: 10px !important;
 }
 .borrow-info h1:nth-child(2) {
-  margin-top: -20px !important;
   font-size: 1.2em !important;
 }
 .borrow-info h2 {
@@ -99,19 +97,23 @@ video {
     margin-bottom: 10px !important;
   }
   .borrow-info h1:nth-child(2) {
-    margin-top: -20px !important;
+    margin-bottom: 20px !important;
     font-size: 0.8em !important;
   }
   .borrow-info h2 {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
     margin-bottom: 10px !important;
   }
   .borrow-info ul {
-    font-size: 0.8em !important;
+    font-size: 0.9em !important;
     text-align: left !important;
     justify-content: start !important;
   }
   .borrow-info h3 {
+    font-size: 1em !important;
     padding-bottom: 10px;
+  }
+  .borrow-info h3 li {
+    font-size: 0.8em !important;
   }
 }/*# sourceMappingURL=borrow.css.map */
