@@ -34,7 +34,7 @@ body {
 .body-content {
   flex: 1;
   flex-direction: column !important;
-  margin: 0px 100px 100px 100px;
+  margin: 0px 100px 100px 100px !important;
 }
 
 * {
@@ -337,8 +337,6 @@ footer {
 
     .history-img {
       width: 100%;
-      height: 400px;
-      /* Set a fixed height for visibility */
       background: url('../images/lib-pic/lib9.jpg') no-repeat center center;
       background-size: cover;
     }

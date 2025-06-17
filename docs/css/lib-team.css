@@ -26,6 +26,8 @@ body {
   flex-direction: column !important;
   height: -moz-max-content !important;
   height: max-content !important;
+  margin: 0 30px 30px !important;
+  padding: 10px 30px 50px 30px !important;
 }
 
 .pattern {
