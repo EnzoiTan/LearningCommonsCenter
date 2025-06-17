@@ -11,7 +11,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Century Gothic", Arial, sans-serif !important;
 }
 
 body {
@@ -1058,14 +1058,14 @@ body {
 @media (max-width: 900px) {
   .left {
     display: flex;
-    width: 90%;
+    width: 80% !important;
     padding-left: 20px !important;
   }
   .left .lcc, .left .lib-name {
     margin-bottom: 0px !important;
   }
   .right {
-    width: 10%;
+    width: 20% !important;
     padding: 20px !important;
   }
   .right span {
