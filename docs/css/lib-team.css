@@ -466,22 +466,26 @@ footer {
   }
 }
 @media (max-width: 768px) {
+  .pres, .vpaa {
+    width: 50% !important;
+  }
   .body-content {
     padding: 10px !important;
     margin: 0 2px !important;
   }
   .lib-team-title {
-    font-size: 1.2em !important;
+    font-size: 1em !important;
     flex-direction: column !important;
     margin-bottom: 10px !important;
   }
   .org {
     gap: 16px !important;
-    align-items: center !important;
+    align-items: start !important;
+    margin-bottom: 20px !important;
   }
   .org-pic {
-    width: 110px !important;
-    height: 110px !important;
+    width: 80px !important;
+    height: 80px !important;
   }
   .library-director .dir {
     width: 100px !important;
@@ -543,22 +547,17 @@ footer {
   .lib-name {
     font-size: 1.1em !important;
   }
-  .lib-team .upper {
-    flex-direction: row !important;
-    gap: 10px !important;
-    align-items: center !important;
-    margin: 0 !important;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    width: 100%;
-    justify-content: flex-start !important;
+  .lib-team .upper,
+  .lib-team .lower {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    align-items: start !important;
   }
-  .lib-team .upper > div {
-    flex: 0 0 48vw;
-    max-width: 48vw;
-    min-width: 160px;
-    scroll-snap-align: start;
-    margin-right: 10px;
+  /* Make the last item of .upper span both columns if it's alone in the last row */
+  .lib-team .upper > div:last-child:nth-child(odd) {
+    grid-column: 1/span 2;
+    justify-self: center;
+    margin-bottom: 20px;
   }
 }/*# sourceMappingURL=lib-team.css.map */
