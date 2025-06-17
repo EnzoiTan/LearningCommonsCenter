@@ -10,7 +10,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .lib-content {
@@ -31,14 +30,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.lib-slideshow {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  display: block;
 }
 
 .carousel-btn {
@@ -95,7 +86,6 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 .pattern {
@@ -125,7 +115,6 @@ nav ul li {
 
 nav a {
   text-decoration: none;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1em;
   font-weight: 600;
   color: rgb(22, 22, 22);
@@ -222,7 +211,6 @@ nav ul li:hover .dropdown-content {
 .lib-name {
   font-size: 1.7em;
   color: var(--primary-color);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 900;
 }
 
@@ -407,7 +395,6 @@ button:active {
   font-size: 3em;
   margin-bottom: 20px;
   color: var(--primary-color);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 900;
 }
 .body-content .lib-sections {
@@ -426,7 +413,6 @@ button:active {
 .body-content .lib-content .section-name {
   font-size: 1.2em;
   color: #fff;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 900;
   margin-bottom: 10px;
 }
@@ -436,11 +422,42 @@ button:active {
 }
 .body-content .desc {
   padding: 30px;
+  background-color: var(--primary-color) !important;
 }
 
 @media screen and (max-width: 768px) {
   .body-content {
     padding: 20px !important;
+  }
+  .section-name {
+    font-size: 1em !important;
+    margin-bottom: 5px !important;
+  }
+  .section-desc {
+    font-size: 0.8em !important;
+  }
+  .lib-content {
+    color: #7f1a1a;
+    height: 100px !important;
+  }
+  .carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel-wrapper img {
+    -o-object-fit: cover !important;
+       object-fit: cover !important;
+    height: 150px !important;
+  }
+  .carousel-img-container {
+    position: relative;
+    height: 10px !important;
+    -o-object-fit: fill;
+       object-fit: fill;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .lib-sections {
     flex-direction: column;
@@ -455,9 +472,6 @@ button:active {
     align-items: center;
     gap: 8px;
   }
-  .lib-content {
-    height: 100px !important;
-  }
   .carousel-img-container {
     position: relative;
     width: 180px !important;
@@ -465,13 +479,6 @@ button:active {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .lib-slideshow {
-    width: 100% !important;
-    height: 20% !important;
-    -o-object-fit: cover;
-       object-fit: cover;
-    display: block;
   }
   .carousel-btn {
     position: absolute;
