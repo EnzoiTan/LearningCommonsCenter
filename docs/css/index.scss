@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #8b2c2c;
+  --primary-color: #a73333;
   --primary-plain-background: rgba(255, 255, 255, 0.33);
   --secondary-plain-background: rgb(236, 236, 236);
   --secondary-color: #e1af19;
@@ -12,7 +12,33 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Century Gothic', Arial, sans-serif !important;
+  
+}
+
+.updates{
+  span{
+    color: #a73333 !important;
+  }
+
+  .announcement-date {
+    color: #515151 !important;
+  }
+}
+
+.lib-name,
+.title,
+p,
+h1, h2, h3, h4, h5, h6,
+li,
+span,
+a:not([class*="fa-"]) {
+  font-family: 'Century Gothic', Arial, sans-serif;
+}
+
+.announcement-card{
+  p{
+    margin-bottom: 0;
+  }
 }
 
 body {
@@ -20,7 +46,7 @@ body {
   flex-direction: column;
   height: max-content;
   background-color: var(--secondary-plain-background);
-  font-family: Arial, sans-serif;
+  // font-family: Arial, sans-serif;
   background-color: #f3f3f3;
   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23e0e0e0' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
 }
@@ -45,6 +71,10 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+p{
+  margin: 0;
+}
+
 .pattern {
   background-color: #8b2c2c;
   width: 100%;
@@ -53,7 +83,7 @@ body {
 
 nav {
   height: 5.3em;
-  background-color: #fff;
+  background-color: #fff !important;
   position: relative;
   display: flex;
   align-items: center;
@@ -63,8 +93,29 @@ nav.navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #fff;
+  background: #fff !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.125);
+}
+
+.dropdown-menu {
+  background-color: #fff;
+  margin-top: 20.79px !important;
+  // border-top: none;
+  border-radius: 0;
+
+  .dropdown-item {
+    padding: 10px 20px;
+    font-size: 0.9em;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background-color: #721f1f;
+      color: #ffffff;
+    }
+  }
 }
 
 nav.navbar.scrolled {
@@ -181,8 +232,22 @@ nav ul li:hover .dropdown-content {
 .lib-name {
   font-size: 1.6em;
   color: var(--primary-color);
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 900;
+  margin: 0;
+}
+
+#navbarMenu{
+  ul{
+    gap: 20px;
+
+    li{
+    font-size: 1.1em;
+  }
+  }
+
+  .nav-link{
+    color: black;
+  }
 }
 
 // .zppsu-name,
@@ -518,23 +583,31 @@ button {
 .did-you-know h3 {
   margin: 0 0 10px;
   color: #8b2c2c;
+  font-size: 1.2em;
+
+
 }
 
 .did-you-know p {
-  font-size: 1.1em;
+  font-size: 1em;
   font-style: italic;
   color: #333;
 }
 
+.see-more-btn{
+  font-size: 0.8em;
+}
+
 .rationale {
-  background-color: var(--primary-color);
+  background-color: #8b2c2c;
   width: 100%;
   padding: 50px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   .rationale-title {
     color: white;
-    font-size: 1.5em;
+    font-size: 1.3em;
+    margin: 0;
     font-weight: 900;
     text-transform: uppercase;
   }
@@ -547,7 +620,7 @@ button {
 
   .rationale-desc {
     color: rgba(240, 240, 240, 0.929);
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 }
 
@@ -649,6 +722,10 @@ button {
     height: 100%;
     overflow: hidden;
 
+    .facts-content{
+      height: max-content;
+    }
+
     hr {
       margin: 10px 0px 30px 0px;
       border: solid rgb(255, 255, 255) 1px;
@@ -706,6 +783,13 @@ button {
     object-fit: contain;
   }
 
+ 
+  .left-content{
+    p{
+      margin: 0px !important;
+    }
+  }
+  
   @keyframes slide {
     0% {
       transform: translateX(0%);
@@ -750,9 +834,26 @@ body {
 
 /* Mobile (max-width: 768px) */
 @media screen and (max-width: 768px) {
+  #navbarMenu{
+  ul{
+    gap: 5px;
+
+    li{
+    font-size: 0.8em;
+  }
+  }
+
+  .nav-link{
+    color: black;
+  }
+}
   nav {
     flex-direction: column;
     height: auto;
+  }
+
+  .navbar{
+    padding: 0;
   }
 
   .container {
