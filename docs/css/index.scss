@@ -881,7 +881,48 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
     font-weight: 900;
   }
+
+  /* Base styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
+
+.navbar-collapse {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Dropdown styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #fff;
+  min-width: 180px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display: block;
+}
+
+}
+
+
+
+
 
 /* Tablet (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
@@ -1055,6 +1096,12 @@ body {
   }
 }
 
+
+
+
+
+
+
 /* Desktop (default styles) */
 @media screen and (min-width: 1025px) {
   .body-content {
@@ -1119,19 +1166,74 @@ body {
   display: flex;
 }
 
+
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .navbar-collapse {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0; right: 0;
+    width: 80vw;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    padding: 2rem 1rem;
+    z-index: 100;
+    overflow-y: auto;
+  }
+  .navbar-collapse.show {
+    display: flex;
+  }
+  .navbar-toggler {
+    display: block;
+  }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    background: none;
+    min-width: 0;
+    padding-left: 1rem;
+  }
+  .dropdown .dropdown-content {
+    display: none;
+  }
+  .dropdown.open .dropdown-content {
+    display: block;
+  }
+  .dropdown > .dropbtn::after {
+    content: " ▼";
+    font-size: 0.8em;
+  }
+}
+
+
 @media (max-width: 900px) {
   .left {
     display: flex;
     width: 90%;
-    padding: 20px !important;
-  }
+    // padding: 20px;
+    padding-left: 20px !important;
 
+    .lcc, .lib-name{
+      margin-bottom: 0px !important;
+    }
+  }
   .right {
     width: 10%;
     padding: 20px !important;
-  }
-  .navbar-toggler {
-    display: block;
+
+    span{
+      font-size: 0.7em
+    }
+
+    .navbar-toggler {
+      align-items: center;
+      display: flex;
+      border-radius: 0;
+      padding: 10px;
+    }
   }
   .navbar-collapse {
     display: none;

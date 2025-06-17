@@ -255,6 +255,19 @@ async function fetchAnnouncements() {
 }
 
 // Burger menu toggle
-  document.getElementById('navbarToggler').onclick = function () {
-    document.getElementById('navbarMenu').classList.toggle('show');
-  };
+document.getElementById('navbarToggler').onclick = function () {
+  document.getElementById('navbarMenu').classList.toggle('show');
+};
+
+// Dropdown toggle for mobile, only one open at a time
+document.querySelectorAll('.dropdown > .dropbtn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      // Close all dropdowns first
+      document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('open'));
+      // Open this one
+      this.parentElement.classList.toggle('open');
+    }
+  });
+});
