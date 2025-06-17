@@ -911,7 +911,8 @@ body {
     display: none;
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 1.3rem;
+    border-radius: 3px !important;
     cursor: pointer;
   }
   /* Dropdown styles */
