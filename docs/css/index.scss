@@ -103,6 +103,8 @@ nav.navbar {
   // border-top: none;
   border-radius: 0;
 
+  --bs-dropdown-min-width: max-content !important;
+
   .dropdown-item {
     padding: 10px 20px;
     font-size: 0.9em;

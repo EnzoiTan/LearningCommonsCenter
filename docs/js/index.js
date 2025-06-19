@@ -20,8 +20,6 @@ const db = getFirestore(app);
 const links = document.querySelectorAll("nav a");
 const indicator = document.querySelector(".indicator");
 
-// ...existing code...
-
 function regroupGalleryGroups() {
   const track = document.querySelector('.gallery-track');
   if (!track) return;

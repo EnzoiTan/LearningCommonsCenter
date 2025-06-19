@@ -94,6 +94,7 @@ nav.navbar {
   background-color: #fff;
   margin-top: 20.79px !important;
   border-radius: 0;
+  --bs-dropdown-min-width: max-content !important;
 }
 .dropdown-menu .dropdown-item {
   padding: 10px 20px;

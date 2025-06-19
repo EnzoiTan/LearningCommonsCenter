@@ -44,7 +44,7 @@
         <img class="lcc-logo" src="images/logos/LCC-logo.png" alt="" />
       </div>
       <div class="title">
-        <p class="lcc" style="display: none;">LCC</p>
+        <p class="lcc" style="display: none;">ZPPSU Library</p>
         <p class="lib-name">Learning Commons Center</p>
       </div>
     </div>
@@ -99,12 +99,16 @@
   </nav>
 
   <div class="body-content">
-    <p class="title-book">New Book Collection</p>
-    <div class="collection-gallery">
+    <div class="hero">
+      <img src="images/elec_resources/book-coll-hero.jpg" alt="Hero Image">
+      <p class="hero-text">New Book Collection</p>
+    </div>
+    <!-- Handbook Collection Gallery -->
+    <div class="collection-gallery handbook-gallery">
       <p class="handbook">Handbook Collection</p>
       <div class="gallery-wrapper">
-        <div class="nav-btn prev-btn">&#10094;</div>
-        <div class="gallery-track">
+        <div class="nav-btn prev-btn handbook-prev">&#10094;</div>
+        <div class="gallery-track handbook-track">
           <!-- Group 1 -->
           <div class="gallery-group">
             <img src="images/BookCollection/1-WritingMatters-Rebecca.jpg" class="book-img" alt="Book 1" />
@@ -136,35 +140,24 @@
             <img src="images/BookCollection/16-SketchupSiteDesign.webp" class="book-img" alt="Book 5" />
             <img src="images/BookCollection/17-TelevisionProductionHandbook.jpg" class="book-img" alt="Book 6" />
             <img src="images/BookCollection/18-HandbookofAppliedEngineeringMath.jpg" class="book-img" alt="Book 7" />
-            <img src="images/BookCollection/Encyclopedia of earthquake research and analysis vol1.jpg" class="book-img"
-              alt="Book 8" />
-            <img src="images/BookCollection/Encyclopedia of Earthquake Research and Analysis Volume II.jpg"
-              class="book-img" alt="Book 8" />
-          </div>
-          <!-- Group 5 -->
-          <div class="gallery-group">
-            <img src="images/BookCollection/Encyclopedia of Earthquake Research and Analysis Volume III.jpg"
-              class="book-img" alt="Book 5" />
-            <img src="images/BookCollection/Encyclopedia of Earthquake Research and Analysis Volume IV.jpg"
-              class="book-img" alt="Book 6" />
-            <img src="images/BookCollection/Encyclopedia of Earthquake Research and Analysis Volume V.jpg"
-              class="book-img" alt="Book 7" />
-            <img src="images/BookCollection/Encyclopaedia of Broadcasting, Television and Radio.jpg" class="book-img"
-              alt="Book 8" />
-            <img src="images/BookCollection/Guiding Children's Social Development and Learning Theory and Skills.jpg"
-              class="book-img" alt="Book 8" />
+            <div class="book-img placeholder">
+              <span>TBA</span>
+            </div>
+            <div class="book-img placeholder">
+              <span>TBA</span>
+            </div>
           </div>
         </div>
-        <div class="nav-btn next-btn">&#10095;</div>
+        <div class="nav-btn next-btn handbook-next">&#10095;</div>
       </div>
     </div>
 
-    <div class="collection-gallery">
+    <!-- Encyclopedia Collection Gallery -->
+    <div class="collection-gallery encyclopedia-gallery">
       <p class="encyclopedia">Encyclopedia Collection</p>
       <div class="gallery-wrapper">
-        <div class="nav-btn prev-btn">&#10094;</div>
-        <div class="gallery-track">
-
+        <div class="nav-btn prev-btn encyclopedia-prev">&#10094;</div>
+        <div class="gallery-track encyclopedia-track">
           <div class="gallery-group">
             <img src="images/BookCollection/Encyclopedia of earthquake research and analysis vol1.jpg" class="book-img"
               alt="Book 8" />
@@ -177,17 +170,26 @@
             <img src="images/BookCollection/Encyclopedia of Earthquake Research and Analysis Volume V.jpg"
               class="book-img" alt="Book 7" />
           </div>
-          <!-- Group 5 -->
           <div class="gallery-group">
-
-
             <img src="images/BookCollection/Encyclopaedia of Broadcasting, Television and Radio.jpg" class="book-img"
               alt="Book 8" />
-            <img src="images/BookCollection/Guiding Children's Social Development and Learning Theory and Skills.jpg"
-              class="book-img" alt="Book 8" />
+            <div class="book-img placeholder">
+              <span>TBA</span>
+            </div>
+            <div class="book-img placeholder">
+              <span>TBA</span>
+            </div>
+            <div class="book-img placeholder">
+              <span>TBA</span>
+            </div>
+            <div class="book-img placeholder">
+              <span>TBA</span>
+            </div>
+            <!-- <img src="images/BookCollection/Guiding Children's Social Development and Learning Theory and Skills.jpg"
+              class="book-img" alt="Book 8" /> -->
           </div>
         </div>
-        <div class="nav-btn next-btn">&#10095;</div>
+        <div class="nav-btn next-btn encyclopedia-next">&#10095;</div>
       </div>
     </div>
 
@@ -232,59 +234,141 @@
   </div>
 </body>
 <script>
-  const track = document.querySelector('.gallery-track');
-  const nextBtn = document.querySelector('.next-btn');
-  const prevBtn = document.querySelector('.prev-btn');
-  let currentSlide = 0;
+  // Global modal state
+  let modalBookImgs = [];
+  let modalCurrentImgIndex = 0;
 
-  nextBtn.onclick = () => {
-    if (currentSlide < track.children.length - 1) {
-      currentSlide++;
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-  };
+  function updatePlaceholdersForMobile() {
+    document.querySelectorAll('.gallery-group').forEach(group => {
+      const realImgs = group.querySelectorAll('.book-img:not(.placeholder)');
+      const placeholders = group.querySelectorAll('.book-img.placeholder');
+      // If mobile and only 1 or 2 real images, remove placeholders
+      if (window.innerWidth <= 768 && realImgs.length <= 0) {
+        placeholders.forEach(ph => ph.style.display = 'none');
+        // Optionally center the real images
+        group.style.justifyContent = 'center';
+      } else {
+        placeholders.forEach(ph => ph.style.display = '');
+        group.style.justifyContent = '';
+      }
+    });
+  }
 
-  prevBtn.onclick = () => {
-    if (currentSlide > 0) {
-      currentSlide--;
-      track.style.transform = `translateX(-${currentSlide * 100}%)`;
-    }
-  };
+  // Run on load and resize
+  window.addEventListener('DOMContentLoaded', updatePlaceholdersForMobile);
+  window.addEventListener('resize', updatePlaceholdersForMobile);
 
-  // Modal logic
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("modalImg");
   const closeModal = document.querySelector(".close-modal");
   const modalPrev = document.querySelector('.modal-prev');
   const modalNext = document.querySelector('.modal-next');
-  const bookImgs = Array.from(document.querySelectorAll('.book-img'));
-  let currentImgIndex = 0;
 
-  function showModal(index) {
-    currentImgIndex = index;
-    modal.style.display = "block";
-    modalImg.src = bookImgs[currentImgIndex].src;
-  }
+  window.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.collection-gallery').forEach(gallery => {
+      const track = gallery.querySelector('.gallery-track');
+      const nextBtn = gallery.querySelector('.next-btn');
+      const prevBtn = gallery.querySelector('.prev-btn');
+      const groups = track ? Array.from(track.querySelectorAll('.gallery-group')) : [];
+      let currentSlide = 0;
 
-  bookImgs.forEach((img, idx) => {
-    img.onclick = () => showModal(idx);
+      // Debug: log all groups and their images
+      console.log('All groups:', groups);
+      groups.forEach((g, i) => {
+        console.log(`Group ${i} innerHTML:`, g.innerHTML);
+        console.log(`Group ${i} has real image:`, g.querySelector('.book-img:not(.placeholder)') !== null);
+      });
+
+      function hasRealImage(group) {
+        return group.querySelector('.book-img:not(.placeholder)') !== null;
+      }
+
+      function findNextGroupIndex(start) {
+        for (let i = start + 1; i < groups.length; i++) {
+          console.log(`Checking group ${i} for real images...`, hasRealImage(groups[i]));
+          if (hasRealImage(groups[i])) return i;
+        }
+        return -1;
+      }
+
+      function findPrevGroupIndex(start) {
+        for (let i = start - 1; i >= 0; i--) {
+          console.log(`Checking group ${i} for real images...`, hasRealImage(groups[i]));
+          if (hasRealImage(groups[i])) return i;
+        }
+        return -1;
+      }
+
+      if (nextBtn && track) {
+        nextBtn.onclick = () => {
+          console.log(`Current slide: ${currentSlide}`);
+          const nextIndex = findNextGroupIndex(currentSlide);
+          console.log(`Next group index with real image: ${nextIndex}`);
+          if (nextIndex !== -1) {
+            currentSlide = nextIndex;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            console.log(`Moved to slide: ${currentSlide}`);
+          } else {
+            console.log('No next group with real images found.');
+          }
+        };
+      }
+
+      if (prevBtn && track) {
+        prevBtn.onclick = () => {
+          console.log(`Current slide: ${currentSlide}`);
+          const prevIndex = findPrevGroupIndex(currentSlide);
+          console.log(`Previous group index with real image: ${prevIndex}`);
+          if (prevIndex !== -1) {
+            currentSlide = prevIndex;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+            console.log(`Moved to slide: ${currentSlide}`);
+          } else {
+            console.log('No previous group with real images found.');
+          }
+        };
+      }
+
+      // Modal logic for this gallery
+      const bookImgs = Array.from(track.querySelectorAll('.book-img:not(.placeholder)'));
+
+      function showModal(index) {
+        modalBookImgs = bookImgs;
+        modalCurrentImgIndex = index;
+        modal.style.display = "block";
+        modalImg.src = modalBookImgs[modalCurrentImgIndex].src;
+      }
+
+      bookImgs.forEach((img, idx) => {
+        img.onclick = () => showModal(idx);
+      });
+    });
   });
 
-  closeModal.onclick = () => modal.style.display = "none";
+  // Modal navigation (always uses the current gallery's images)
+  if (closeModal) {
+    closeModal.onclick = () => modal.style.display = "none";
+  }
 
-  modalPrev.onclick = (e) => {
-    e.stopPropagation();
-    if (currentImgIndex > 0) {
-      showModal(currentImgIndex - 1);
-    }
-  };
+  if (modalPrev) {
+    modalPrev.onclick = (e) => {
+      e.stopPropagation();
+      if (modalCurrentImgIndex > 0) {
+        modalCurrentImgIndex--;
+        modalImg.src = modalBookImgs[modalCurrentImgIndex].src;
+      }
+    };
+  }
 
-  modalNext.onclick = (e) => {
-    e.stopPropagation();
-    if (currentImgIndex < bookImgs.length - 1) {
-      showModal(currentImgIndex + 1);
-    }
-  };
+  if (modalNext) {
+    modalNext.onclick = (e) => {
+      e.stopPropagation();
+      if (modalCurrentImgIndex < modalBookImgs.length - 1) {
+        modalCurrentImgIndex++;
+        modalImg.src = modalBookImgs[modalCurrentImgIndex].src;
+      }
+    };
+  }
 
   window.onclick = (e) => {
     if (e.target === modal) modal.style.display = "none";
@@ -293,15 +377,21 @@
   window.addEventListener('keydown', (e) => {
     if (modal.style.display === "block") {
       if (e.key === "ArrowLeft") {
-        if (currentImgIndex > 0) showModal(currentImgIndex - 1);
+        if (modalCurrentImgIndex > 0) {
+          modalCurrentImgIndex--;
+          modalImg.src = modalBookImgs[modalCurrentImgIndex].src;
+        }
       } else if (e.key === "ArrowRight") {
-        if (currentImgIndex < bookImgs.length - 1) showModal(currentImgIndex + 1);
+        if (modalCurrentImgIndex < modalBookImgs.length - 1) {
+          modalCurrentImgIndex++;
+          modalImg.src = modalBookImgs[modalCurrentImgIndex].src;
+        }
       } else if (e.key === "Escape") {
         modal.style.display = "none";
       }
     }
   });
 </script>
-<script type="module" src="js/index.js"></script>
+<!-- <script type="module" src="js/index.js"></script> -->
 
 </html>
