@@ -31,8 +31,8 @@
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }
 
-    button{
-      background-color: #4CAF50;
+    .request-btn{
+      // background-color: #4CAF50;
       /* Green background */
       border: none;
       color: white;
@@ -43,12 +43,25 @@
       font-size: 16px;
       margin: 4px 2px;
       cursor: pointer;
-      border-radius: 5px;
+      border-radius: 3px;
+
+      .request-btn:hover{
+        background-color: #0e00d0 !important;
+      }
     }
 
     .container {
       display: flex;
       justify-content: center;
+      align-items: center;
+      padding: 0;
+      flex-wrap: wrap;
+      /* Allows wrapping of items */
+    }
+
+    .btn-container {
+      margin-left: 17.5% !important;
+      display: flex;
       align-items: center;
       padding: 0;
       flex-wrap: wrap;

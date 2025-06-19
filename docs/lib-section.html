@@ -106,7 +106,7 @@
       <div class="lib-content">
         <div class="carousel-wrapper">
           <button class="carousel-btn prev-btn" aria-label="Previous image">&#10094;</button>
-          <img class="" src="images/lib-sect/circ.jpg"
+          <img class="lib-slideshow" src="images/lib-sect/circ.jpg"
             data-images='["images/lib-sect/circ.jpg","images/lib-sect/circ2.jpg","images/lib-sect/circ3.jpg"]'
             alt="Circulation Section" />
           <button class="carousel-btn next-btn" aria-label="Next image">&#10095;</button>
@@ -237,27 +237,42 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.carousel-wrapper').forEach(wrapper => {
-      const img = wrapper.querySelector('.lib-slideshow');
+      // Select the first img inside the wrapper, regardless of class
+      const img = wrapper.querySelector('img');
       const images = JSON.parse(img.getAttribute('data-images'));
       let idx = 0;
+
+      // Preload all images for smoother transitions
+      images.forEach(src => {
+        const preloadImg = new Image();
+        preloadImg.src = src;
+      });
 
       function showImage(i) {
         idx = (i + images.length) % images.length;
         img.src = images[idx];
       }
 
+      // Optional: Disable prev/next at ends (uncomment if you want this UX)
+      function updateButtons() {
+        wrapper.querySelector('.prev-btn').disabled = (idx === 0);
+        wrapper.querySelector('.next-btn').disabled = (idx === images.length - 1);
+      }
+      updateButtons();
+
       wrapper.querySelector('.prev-btn').addEventListener('click', function (e) {
         e.preventDefault();
         showImage(idx - 1);
+        // updateButtons();
       });
 
       wrapper.querySelector('.next-btn').addEventListener('click', function (e) {
         e.preventDefault();
         showImage(idx + 1);
+        // updateButtons();
       });
     });
   });
 </script>
-<script type="module" src="js/index.js"></script>
 
 </html>

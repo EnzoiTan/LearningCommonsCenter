@@ -232,10 +232,16 @@ body {
 
 .modal-content {
   display: block;
-  margin: auto;
-  max-width: 90%;
-  max-height: 80vh;
-  border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 90vw;
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.3);
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
 }
 
 .close-modal {

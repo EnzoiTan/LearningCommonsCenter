@@ -54,8 +54,6 @@ window.addEventListener('resize', () => {
   }
 });
 
-
-
 // Function to move the indicator
 function moveIndicator(link) {
   const rect = link.getBoundingClientRect();
