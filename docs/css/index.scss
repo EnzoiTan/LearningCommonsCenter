@@ -289,6 +289,13 @@ nav ul li:hover .dropdown-content {
   margin-right: 10px;
 }
 
+.visitor-counter{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 footer {
   background-color: rgba(139, 44, 44, 0.8);
   /* Semi-transparent maroon color */
@@ -371,6 +378,7 @@ footer {
 .footer-content .middle-content a {
   color: #fff;
 }
+
 
 .middle-content {
   display: flex;
