@@ -38,11 +38,26 @@
     width: 100%;
 }
 
+.announcement-item:hover{
+  width: 103%;
+
+  i,:hover{
+    color: #1f1f1f;
+  }
+  h4,:hover{
+    color: #8b2c2c;
+  }
+  p:hover{
+    color: #555;
+  }
+}
+
 .announcement-icon {
     font-size: 2.2rem;
-    color: var(--primary-color);
+    color: #8b2c2c;
     margin-right: 20px;
     flex-shrink: 0;
+    
 }
 
 .announcement-content {

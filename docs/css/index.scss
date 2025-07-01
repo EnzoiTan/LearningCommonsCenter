@@ -6,8 +6,6 @@
   --text-color: #fff;
 }
 
-
-
 * {
   padding: 0;
   margin: 0;
@@ -443,6 +441,8 @@ button {
 
   &:hover {
     background-color: #960000;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 
   &:active {
@@ -669,46 +669,63 @@ button {
     text-align: center;
   }
 
-  .mvgo-container {
+    .mvgo-container {
     display: grid;
     grid-template-columns: 1fr 2fr; // Two columns: 1 for image, 1 for text
     gap: 20px;
     margin: 0 50px 0px 50px;
     align-items: start;
-
+  
     .image-column {
       grid-column: 1; // Image in the first column
       text-align: center;
-
+  
       .mvgo-image {
         max-width: 67%;
         height: auto;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s;
+      }
+      .mvgo-image:hover {
+        transform: scale(1.05);
       }
     }
-
+  
     .text-column {
       grid-column: 2; // Text content in the second column
-
+  
       h3 {
         font-size: 1.5rem;
         margin-bottom: 10px;
         color: #8b2c2c;
+        transition: color 0.3s, font-weight 0.3s, letter-spacing 0.3s;
       }
-
+  
+      h3:hover {
+        color: #8b2c2c;
+        cursor: default;
+        font-weight: 900;
+        letter-spacing: 2px;
+        transition: color 0.3s, font-weight 0.3s, letter-spacing 0.3s;
+      }
+  
+      p, ul, li {
+        transition: color 0.4s, background 0.4s, letter-spacing 0.4s;
+      }
+  
       p {
         font-size: 1rem;
         color: #292929;
         line-height: 1.6;
         margin-bottom: 20px;
       }
-
+  
       ul {
         list-style-type: disc;
         padding-left: 20px;
         text-align: left;
-
+  
         li {
           font-size: 1rem;
           color: #292929;
@@ -716,8 +733,7 @@ button {
           margin-bottom: 10px;
         }
       }
-    }
-  }
+    }}
 }
 
 .content2 {
@@ -1253,7 +1269,7 @@ body {
 /* Desktop (default styles) */
 @media screen and (min-width: 1025px) {
   .body-content {
-    margin: 50px;
+    margin: 30px 50px;
   }
 
   .content2 {

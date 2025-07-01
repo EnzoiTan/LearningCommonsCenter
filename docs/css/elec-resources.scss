@@ -23,7 +23,8 @@
     .hero-text {
       position: absolute;
       top: 50%;
-      left: 90%;
+      left: 80.5%;
+      width: max-content;
       transform: translate(-50%, -50%);
       color: white;
       font-size: 2em;
@@ -131,6 +132,7 @@
 
         .hero-text {
             left: 78%;
+            width: 50%;
             transform: translate(-50%, -50%);
             font-size: 1.5em;
         }

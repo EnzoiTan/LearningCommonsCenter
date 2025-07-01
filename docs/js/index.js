@@ -138,22 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.remove("scrolled");
     }
   });
-
-  // Announcement "See More" button (if you want to expand/collapse, optional)
-  const updatesSection = document.getElementById("announcementUpdates");
-  const seeMoreButton = document.getElementById("seeMoreButton");
-  if (seeMoreButton && updatesSection) {
-    seeMoreButton.addEventListener("click", () => {
-      if (updatesSection.classList.contains("expanded")) {
-        updatesSection.classList.remove("expanded");
-        seeMoreButton.textContent = "See More";
-      } else {
-        updatesSection.classList.add("expanded");
-        seeMoreButton.textContent = "See Less";
-      }
-    });
-  }
-
+  
   // Fetch and display only the latest 4 announcements
   fetchAnnouncements();
 });
