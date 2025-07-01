@@ -18,8 +18,9 @@ strong{
 }
 
 li{
-    :hover{
+    &:hover{
         color: #8b2c2c;
+        font-size: 1.1em;
     }
 }
 
