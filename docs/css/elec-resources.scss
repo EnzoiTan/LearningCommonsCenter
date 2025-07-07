@@ -2,12 +2,16 @@
   font-family: 'Century Gothic', Arial, sans-serif;
 }
 
+hr{
+  width: 75%;
+}
+
 .hero {
       position: relative;
       text-align: center;
       overflow: hidden;
       height: 100px;
-      /* Set a fixed height for the hero section */
+      
       margin-bottom: 25px;
     }
 
@@ -15,7 +19,7 @@
       width: 100%;
       height: 100px;
       object-fit: cover;
-      /* Ensures the image covers the container without stretching */
+      
       display: block;
       filter: blur(1px);
     }
@@ -33,12 +37,10 @@
     }
 
     .request-btn{
-      // background-color: #4CAF50;
-      /* Green background */
       border: none;
       color: white;
       padding: 10px 20px;
-      text-align: center;
+      text-align: start;
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
@@ -46,9 +48,6 @@
       cursor: pointer;
       border-radius: 3px;
 
-      .request-btn:hover{
-        background-color: #0e00d0 !important;
-      }
     }
 
     .container {
@@ -57,16 +56,16 @@
       align-items: center;
       padding: 0;
       flex-wrap: wrap;
-      /* Allows wrapping of items */
+      
     }
 
     .btn-container {
-      margin-left: 17.5% !important;
+      width: 75%;
       display: flex;
-      align-items: center;
+      align-items: start !important;
       padding: 0;
       flex-wrap: wrap;
-      /* Allows wrapping of items */
+      
     }
 
     .elec_img-container {
@@ -82,15 +81,15 @@
       max-width: 500px;
       max-height: 500px;
       filter: grayscale(50%);
-      /* Makes the image grayscale */
+      
       transition: filter 0.3s ease;
-      /* Smooth transition for hover effect */
+      
       cursor: pointer;
     }
 
     .elec_img:hover {
       filter: grayscale(0%);
-      /* Shows color on hover */
+      
     }
 
     .elec_img-text {
@@ -98,7 +97,7 @@
       bottom: 0;
       width: 100%;
       background: rgba(27, 27, 27, 0.555);
-      /* Semi-transparent black background */
+      
       color: white;
       padding: 10px 0;
       text-shadow: 1px 1px 1px #1f1f1f;
@@ -106,7 +105,7 @@
       font-weight: bold;
       text-align: center;
       backdrop-filter: blur(3px);
-      /* Adds a blur effect to the background */
+      
     }
 
     @media screen and (max-width: 768px) {
@@ -138,8 +137,7 @@
         }
 
         .request-btn{
-          // background-color: #4CAF50;
-          /* Green background */
+          
           border: none;
           color: white;
           padding: 10px 20px;

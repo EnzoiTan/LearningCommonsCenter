@@ -50,7 +50,6 @@
   align-items: center;
   justify-content: center;
   margin: 0 !important;
-  /* Place the button inside the image area */
 }
 
 .prev-btn {
@@ -63,6 +62,8 @@
 
 .carousel-btn:hover {
   background: rgba(139, 44, 44, 0.8);
+  width: 10px !important;
+  padding: 20px;
 }
 
 body {
@@ -118,7 +119,6 @@ nav a {
   font-size: 1em;
   font-weight: 600;
   color: rgb(22, 22, 22);
-  /* Default color */
   padding: 34px;
   box-sizing: border-box;
   display: flex;
@@ -127,30 +127,24 @@ nav a {
 
 nav a:hover {
   color: #8b2c2c;
-  /* Hover color */
 }
 
 nav a.active {
   color: #8b2c2c;
-  /* Active color (maroon) */
 }
 
 nav a.hidden {
   color: rgb(22, 22, 22);
-  /* Temporarily hide the active color */
 }
 
 nav a.hovered {
   color: #8b2c2c;
-  /* Temporarily apply active color when hovering */
 }
 
-/* Dropdown menu styles */
 nav ul li .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
-  /* Position the dropdown below the nav bar */
   left: 0;
   background-color: #fff;
   min-width: -moz-max-content;
@@ -217,9 +211,7 @@ nav ul li:hover .dropdown-content {
 .divider {
   border-left: 2px solid var(--primary-color);
   height: 1.5em;
-  /* Adjust the height to match the text */
   margin: 0 8px;
-  /* Add balanced horizontal spacing */
 }
 
 .lib {
@@ -244,7 +236,6 @@ nav ul li:hover .dropdown-content {
 
 footer {
   background-color: rgba(139, 44, 44, 0.8);
-  /* Semi-transparent maroon color */
   color: #fff;
   height: 150px;
   width: 100%;
@@ -253,7 +244,6 @@ footer {
   align-items: center;
   position: relative;
   z-index: 1;
-  /* Ensure the footer content is above the background image */
 }
 
 .cpr {
@@ -266,7 +256,6 @@ footer {
   align-items: center;
   position: relative;
   z-index: 1;
-  /* Ensure the footer content is above the background image */
 }
 
 .title-cap {
@@ -285,7 +274,6 @@ footer {
   bottom: 0;
   width: 100%;
   color: #fff;
-  /* Text color */
 }
 .footer-content::before {
   content: "";
@@ -306,9 +294,7 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(81, 15, 15, 0.3);
-  /* Overlay color */
   z-index: -1;
-  /* Place the overlay behind the content */
 }
 
 .footer-content footer {
@@ -340,7 +326,6 @@ footer {
   object-fit: cover;
   opacity: 80%;
   filter: grayscale(100%);
-  /* Converts the image to black and white */
 }
 
 .footer-zppsu-lg {
@@ -350,7 +335,6 @@ footer {
   object-fit: cover;
   opacity: 80%;
   filter: grayscale(100%);
-  /* Converts the image to black and white */
 }
 
 .socmed i {
@@ -368,7 +352,6 @@ footer {
 button {
   width: 50%;
   background-color: #8b2c2c;
-  /* Maroon color */
   color: #fff;
   border: none;
   margin: 15px 0px 30px 30px;
@@ -381,7 +364,6 @@ button:hover {
 }
 button:active {
   background-color: #721f1f;
-  /* Darker maroon for active state */
   transform: scale(0.95);
 }
 
@@ -401,11 +383,9 @@ button:active {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  /* Adjust gap as needed */
 }
 .body-content .lib-content {
   flex: 1 1 calc(33.333% - 20px);
-  /* Adjust width and gap as needed */
   box-sizing: border-box;
   background-color: var(--primary-color);
   color: #fff;
@@ -498,6 +478,5 @@ button:active {
     align-items: center;
     justify-content: center;
     margin: 0 !important;
-    /* Place the button inside the image area */
   }
 }/*# sourceMappingURL=lib-section.css.map */

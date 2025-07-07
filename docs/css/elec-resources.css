@@ -2,12 +2,15 @@
   font-family: "Century Gothic", Arial, sans-serif;
 }
 
+hr {
+  width: 75%;
+}
+
 .hero {
   position: relative;
   text-align: center;
   overflow: hidden;
   height: 100px;
-  /* Set a fixed height for the hero section */
   margin-bottom: 25px;
 }
 
@@ -16,7 +19,6 @@
   height: 100px;
   -o-object-fit: cover;
      object-fit: cover;
-  /* Ensures the image covers the container without stretching */
   display: block;
   filter: blur(1px);
 }
@@ -35,20 +37,16 @@
 }
 
 .request-btn {
-  /* Green background */
   border: none;
   color: white;
   padding: 10px 20px;
-  text-align: center;
+  text-align: start;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 3px;
-}
-.request-btn .request-btn:hover {
-  background-color: #0e00d0 !important;
 }
 
 .container {
@@ -57,16 +55,14 @@
   align-items: center;
   padding: 0;
   flex-wrap: wrap;
-  /* Allows wrapping of items */
 }
 
 .btn-container {
-  margin-left: 17.5% !important;
+  width: 75%;
   display: flex;
-  align-items: center;
+  align-items: start !important;
   padding: 0;
   flex-wrap: wrap;
-  /* Allows wrapping of items */
 }
 
 .elec_img-container {
@@ -82,15 +78,12 @@
   max-width: 500px;
   max-height: 500px;
   filter: grayscale(50%);
-  /* Makes the image grayscale */
   transition: filter 0.3s ease;
-  /* Smooth transition for hover effect */
   cursor: pointer;
 }
 
 .elec_img:hover {
   filter: grayscale(0%);
-  /* Shows color on hover */
 }
 
 .elec_img-text {
@@ -98,7 +91,6 @@
   bottom: 0;
   width: 100%;
   background: rgba(27, 27, 27, 0.555);
-  /* Semi-transparent black background */
   color: white;
   padding: 10px 0;
   text-shadow: 1px 1px 1px #1f1f1f;
@@ -107,7 +99,6 @@
   text-align: center;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
-  /* Adds a blur effect to the background */
 }
 
 @media screen and (max-width: 768px) {
@@ -136,7 +127,6 @@
     font-size: 1.5em;
   }
   .request-btn {
-    /* Green background */
     border: none;
     color: white;
     padding: 10px 20px;

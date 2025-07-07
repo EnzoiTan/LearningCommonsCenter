@@ -34,7 +34,7 @@
       text-align: center;
       overflow: hidden;
       height: 100px;
-      /* Set a fixed height for the hero section */
+      
       margin-bottom: 25px;
     }
 
@@ -42,7 +42,7 @@
       width: 100%;
       height: 100px;
       object-fit: cover;
-      /* Ensures the image covers the container without stretching */
+      
       display: block;
       filter: blur(1px);
     }
@@ -65,7 +65,7 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-/* Modal styles */
+
 .custom-modal {
   display: none;
   position: fixed;
@@ -136,10 +136,10 @@ body {
 .collection-gallery {
   padding: 20px;
   overflow: hidden;
-  /* Hide overflowing content */
+  
   position: relative;
   width: 100%;
-  /* Ensure it takes the full width of the container */
+  
 }
 
 .gallery-wrapper {
@@ -147,7 +147,7 @@ body {
   align-items: center;
   position: relative;
   width: 100%;
-  /* Ensure it takes the full width of the container */
+  
 }
 
 .encyclopedia, .handbook {
@@ -162,9 +162,9 @@ body {
 .gallery-track {
   display: flex;
   transition: transform 0.5s ease;
-  /* Smooth transition for sliding */
+  
   width: calc(100% * 2);
-  /* Adjust width to fit all groups (2 groups in this case) */
+  
 }
 
 .gallery-group {
@@ -172,7 +172,7 @@ body {
   justify-content: space-between;
   flex: 0 0 100%;
   padding-right: 20px;
-  /* Each group takes 100% of the container width */
+  
 }
 
 .body-content {
@@ -207,7 +207,7 @@ body {
       padding: 40px;
     }
 
-    /* Add these styles for modal navigation arrows */
+    
     .modal-nav {
       position: absolute;
       top: 50%;
@@ -237,7 +237,7 @@ body {
 
 .book-img {
   width: 18%;
-  /* Ensure 4 images fit in a single row */
+  
   height: auto;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -269,7 +269,7 @@ body {
   right: 10px;
 }
 
-/* Modal */
+
 .modal {
   display: none;
   position: fixed;
@@ -346,7 +346,7 @@ nav a {
   font-size: 1em;
   font-weight: 600;
   color: rgb(22, 22, 22);
-  /* Default color */
+  
   padding: 34px;
   box-sizing: border-box;
   display: flex;
@@ -355,30 +355,30 @@ nav a {
 
 nav a:hover {
   color: #8b2c2c;
-  /* Hover color */
+  
 }
 
 nav a.active {
   color: #8b2c2c;
-  /* Active color (maroon) */
+  
 }
 
 nav a.hidden {
   color: rgb(22, 22, 22);
-  /* Temporarily hide the active color */
+  
 }
 
 nav a.hovered {
   color: #8b2c2c;
-  /* Temporarily apply active color when hovering */
+  
 }
 
-/* Dropdown menu styles */
+
 nav ul li .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
-  /* Position the dropdown below the nav bar */
+  
   left: 0;
   background-color: #fff;
   min-width: max-content;
@@ -455,9 +455,9 @@ nav ul li:hover .dropdown-content {
 .divider {
   border-left: 2px solid var(--primary-color);
   height: 1.5em;
-  /* Adjust the height to match the text */
+  
   margin: 0 8px;
-  /* Add balanced horizontal spacing */
+  
 }
 
 .lib {
@@ -482,7 +482,7 @@ nav ul li:hover .dropdown-content {
 
 footer {
   background-color: rgba(139, 44, 44, 0.8);
-  /* Semi-transparent maroon color */
+  
   color: #fff;
   height: 150px;
   width: 100%;
@@ -491,7 +491,7 @@ footer {
   align-items: center;
   position: relative;
   z-index: 1;
-  /* Ensure the footer content is above the background image */
+  
 }
 
 .cpr {
@@ -504,7 +504,7 @@ footer {
   align-items: center;
   position: relative;
   z-index: 1;
-  /* Ensure the footer content is above the background image */
+  
 }
 
 .title-cap {
@@ -523,7 +523,7 @@ footer {
   bottom: 0;
   width: 100%;
   color: #fff;
-  /* Text color */
+  
 
   &::before {
     content: "";
@@ -545,9 +545,9 @@ footer {
     width: 100%;
     height: 100%;
     background: rgba(81, 15, 15, 0.3);
-    /* Overlay color */
+    
     z-index: -1;
-    /* Place the overlay behind the content */
+    
   }
 }
 
@@ -580,7 +580,7 @@ footer {
   object-fit: cover;
   opacity: 80%;
   filter: grayscale(100%);
-  /* Converts the image to black and white */
+  
 }
 
 .footer-zppsu-lg {
@@ -590,7 +590,7 @@ footer {
   object-fit: cover;
   opacity: 80%;
   filter: grayscale(100%);
-  /* Converts the image to black and white */
+  
 }
 
 .socmed i {
@@ -608,7 +608,7 @@ footer {
 button {
   width: 50%;
   background-color: #8b2c2c;
-  /* Maroon color */
+  
   color: #fff;
   border: none;
   margin: 15px 0px 30px 30px;
@@ -622,7 +622,7 @@ button {
 
   &:active {
     background-color: #721f1f;
-    /* Darker maroon for active state */
+    
     transform: scale(0.95);
   }
 }
@@ -670,7 +670,7 @@ button {
       text-align: center;
       overflow: hidden;
       height: 100px;
-      /* Set a fixed height for the hero section */
+      
       margin-bottom: 10px;
     }
 
@@ -678,7 +678,7 @@ button {
       width: 100%;
       height: 100px;
       object-fit: cover;
-      /* Ensures the image covers the container without stretching */
+      
       display: block;
       filter: blur(1px);
     }

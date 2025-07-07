@@ -21,21 +21,7 @@
 </head>
 
 <body>
-  <!--Start of Tawk.to Script-->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/681af94b50affd190e993371/1iqklrkld';
-      s1.charset = 'UTF-8';
-      s1.setAttribute('crossorigin', '*');
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-  <!--End of Tawk.to Script-->
   <div class="pattern">
-    <!-- <i class="fa-solid fa-clock"></i> -->
   </div>
   <nav class="navbar navbar-expand-lg bg-light">
     <div class="left">
@@ -56,41 +42,40 @@
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="index.html" data-id="home">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="updatesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Updates
-            </a>
+              aria-expanded="false" data-id="updates">Updates</a>
             <ul class="dropdown-menu" aria-labelledby="updatesDropdown">
-              <li><a class="dropdown-item" href="annoucement.html">Annoucement</a></li>
-              <li><a class="dropdown-item" href="activities.html">Activities</a></li>
-              <li><a class="dropdown-item" href="top-users.html">Library Top Users</a></li>
-              <li><a class="dropdown-item" href="https://zppsu.edu.ph/news-and-updates/">ZPPSU Updates</a></li>
-              <li><a class="dropdown-item" href="new-coll.html">New Collection</a></li>
+              <li><a class="dropdown-item" href="annoucement.html" data-id="announcement">Annoucement</a></li>
+              <li><a class="dropdown-item" href="activities.html" data-id="activities">Activities</a></li>
+              <li><a class="dropdown-item" href="top-users.html" data-id="top-users">Library Top Users</a></li>
+              <li><a class="dropdown-item" href="https://zppsu.edu.ph/news-and-updates/" target="_blank"
+                  data-id="zppsu-updates">ZPPSU
+                  Updates</a></li>
+              <li><a class="dropdown-item" href="new-coll.html" data-id="new-coll">New Collection</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Services
-            </a>
+              aria-expanded="false" data-id="services">Services</a>
             <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
-              <li><a class="dropdown-item" href="borrow.html">Book Borrowing</a></li>
-              <li><a class="dropdown-item" href="elec_resources.html">Electronic Resources</a></li>
-              <li><a class="dropdown-item" href="https://tinyurl.com/EbookRequests">Online Request</a></li>
-              <li><a class="dropdown-item" href="lib-section.html">Library Section</a></li>
+              <li><a class="dropdown-item" href="borrow.html" data-id="borrow">Book Borrowing</a></li>
+              <li><a class="dropdown-item" href="elec_resources.html" data-id="elec-resources">Electronic Resources</a>
+              </li>
+              <li><a class="dropdown-item" href="https://tinyurl.com/EbookRequests" target="_blank"
+                  data-id="ebook-requests">Online
+                  Request</a></li>
+              <li><a class="dropdown-item" href="lib-section.html" data-id="lib-section">Library Section</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              About
-            </a>
+              aria-expanded="false" data-id="about">About</a>
             <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
-              <li><a class="dropdown-item" href="history.html">Our History</a></li>
-              <li><a class="dropdown-item" href="lib-team.html">The Org</a></li>
+              <li class="about"><a class="dropdown-item" href="history.html" data-id="history">Our History</a></li>
+              <li class="about"><a class="dropdown-item" href="lib-team.html" data-id="lib-team">The Org</a></li>
             </ul>
           </li>
         </ul>
@@ -103,10 +88,11 @@
     <p class="hero-text">Electronic Resources</p>
   </div>
 
-  <div class="btn-container"><a href="https://forms.gle/tHk2vdPBrLTRoHjB8" target="_blank"><button
-        class="request-btn">Request Access <i class="fa-solid fa-chevron-right"></i></button></a>
-  </div>
   <div class="container">
+    <div class="btn-container"><a href="https://forms.gle/tHk2vdPBrLTRoHjB8" target="_blank"><button
+          class="request-btn">Request Access <i class="fa-solid fa-chevron-right"></i></button></a>
+    </div>
+    <hr>
     <div class="elec_img-container">
       <a href="https://starbooks.ph/login">
         <img class="elec_img" src="images/elec_resources/elec_ss.png" alt="Electronic Resource 1">
@@ -147,27 +133,42 @@
         <br />
         <p>R.T. Lim Blvd, Baliwasan, Zamboanga City, PH</p>
         <p>0917-651-7802</p>
-        <p>zcspc.library@gmail.com</p>
+        <p>learningcommonscenter@zppsu.edu.ph</p>
       </div>
       <div class="middle-content">
         <p class="cp-link">Campus Links</p>
-        <a href="https://zppsu.edu.ph/">zppsu.edu.ph</a>
+        <a class="CL" href="https://zppsu.edu.ph/" target="_blank">zppsu.edu.ph</a>
         <br />
+
         <div class="socmed">
           <a href="https://facebook.com/zppsulibrary" target="_blank"><i class="fab fa-facebook"></i></a>
           <a href="#"><i class="fab fa-twitter"></i></a>
           <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
+
       <div class="right-content">
         <img class="footer-zppsu-lg" src="images/logos/zppsu-logo.png" alt="" />
         <img class="footer-lcc-lg" src="images/logos/LCC-logo.png" alt="" />
       </div>
+
     </footer>
     <div class="cpr">
       <p>&copy; 2025 Zamboanga Peninsula Polytechnic State University</p>
     </div>
   </div>
+
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/681af94b50affd190e993371/1iqklrkld';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
 </body>
 <script type="module" src="js/index.js"></script>
 

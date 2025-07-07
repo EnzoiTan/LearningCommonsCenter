@@ -66,28 +66,45 @@ function moveIndicator(link) {
   indicator.style.width = `${width}px`;
 }
 
-// Set initial active state on page load
 document.addEventListener("DOMContentLoaded", () => {
-  const currentPage = window.location.pathname.split("/").pop(); // Get the current page name
-  const navLinks = document.querySelectorAll("nav a"); // Select all nav links
+  // Get the current file name without query/hash
+  let currentUrl = window.location.pathname.split("/").pop() || "index.html";
+  currentUrl = currentUrl.split("?")[0].split("#")[0];
 
-  // Loop through all nav links
+  const navLinks = document.querySelectorAll("nav a.nav-link, nav .dropdown-item");
+  navLinks.forEach(link => link.classList.remove("active"));
+
+  let foundActive = false;
+
   navLinks.forEach(link => {
-    const href = link.getAttribute("href");
+    let href = link.getAttribute("href");
+    if (!href) return;
+    href = href.split("?")[0].split("#")[0];
 
-    // Check if the current page matches the link's href
-    if (href === currentPage) {
-      // If the link is inside a dropdown, add active to the parent dropdown only
-      const parentDropdown = link.closest(".dropdown");
-      if (parentDropdown) {
-        parentDropdown.querySelector(".dropbtn").classList.add("active");
-      } else {
-        link.classList.add("active"); // Add active class to the matching link
+    // For Home, also match empty string (for root)
+    if (
+      (href === currentUrl) ||
+      (href === "index.html" && (currentUrl === "" || currentUrl === "index.html"))
+    ) {
+      link.classList.add("active");
+      foundActive = true;
+      // If dropdown item, also activate parent dropdown-toggle
+      if (link.classList.contains("dropdown-item")) {
+        const parentDropdown = link.closest(".dropdown");
+        if (parentDropdown) {
+          const dropdownToggle = parentDropdown.querySelector(".nav-link.dropdown-toggle");
+          if (dropdownToggle) dropdownToggle.classList.add("active");
+        }
       }
-    } else {
-      link.classList.remove("active"); // Remove active class from other links
     }
   });
+
+  // If no dropdown item or other link matched, set Home as active
+  if (!foundActive) {
+    const homeLink = document.querySelector('nav a.nav-link[href="index.html"]');
+    if (homeLink) homeLink.classList.add("active");
+  }
+});
 
   // Did You Know facts
   const facts = [
@@ -141,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
   // Fetch and display only the latest 4 announcements
   fetchAnnouncements();
-});
 
 // Hover behavior for nav links
 links.forEach((link) => {
@@ -157,27 +173,6 @@ links.forEach((link) => {
     const activeLink = document.querySelector("nav a.active");
     if (activeLink) {
       moveIndicator(activeLink); // Restore active indicator
-    }
-  });
-
-  link.addEventListener("click", (e) => {
-    const id = link.getAttribute("data-id");
-    const href = link.getAttribute("href");
-
-    // Save active state
-    localStorage.setItem("activeLink", id);
-    links.forEach((l) => l.classList.remove("active"));
-    link.classList.add("active");
-    moveIndicator(link); // Move indicator to clicked link
-
-    // Allow navigation if href exists
-    if (href && href !== "#") {
-      window.location.href = href;
-    }
-
-    // Prevent default only if href is "#"
-    if (href === "#") {
-      e.preventDefault();
     }
   });
 });

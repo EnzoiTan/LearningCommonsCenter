@@ -131,7 +131,6 @@ nav a {
   font-size: 1em;
   font-weight: 600;
   color: rgb(22, 22, 22);
-  /* Default color */
   padding: 34px;
   box-sizing: border-box;
   display: flex;
@@ -140,7 +139,6 @@ nav a {
 
 nav a:hover {
   color: #8b2c2c;
-  /* Hover color */
 }
 
 nav a.active {
@@ -149,20 +147,16 @@ nav a.active {
 
 nav a.hidden {
   color: rgb(22, 22, 22);
-  /* Temporarily hide the active color */
 }
 
 nav a.hovered {
   color: #8b2c2c;
-  /* Temporarily apply active color when hovering */
 }
 
-/* Dropdown menu styles */
 nav ul li .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
-  /* Position the dropdown below the nav bar */
   left: 0;
   background-color: #fff;
   min-width: -moz-max-content;
@@ -240,9 +234,7 @@ nav ul li:hover .dropdown-content {
 .divider {
   border-left: 2px solid var(--primary-color);
   height: 1.5em;
-  /* Adjust the height to match the text */
   margin: 0 8px;
-  /* Add balanced horizontal spacing */
 }
 
 .lib {
@@ -279,7 +271,6 @@ nav ul li:hover .dropdown-content {
 
 footer {
   background-color: rgba(139, 44, 44, 0.8);
-  /* Semi-transparent maroon color */
   color: #fff;
   height: 150px;
   width: 100%;
@@ -289,7 +280,6 @@ footer {
   position: relative;
   z-index: 1;
   flex: 1;
-  /* Ensure the footer content is above the background image */
 }
 
 .cpr {
@@ -302,7 +292,6 @@ footer {
   align-items: center;
   position: relative;
   z-index: 1;
-  /* Ensure the footer content is above the background image */
 }
 
 .title-cap {
@@ -341,9 +330,7 @@ footer {
   width: 100%;
   height: 100%;
   background: rgba(81, 15, 15, 0.3);
-  /* Overlay color */
   z-index: -1;
-  /* Place the overlay behind the content */
 }
 
 .footer-content footer {
@@ -375,7 +362,6 @@ footer {
   object-fit: cover;
   opacity: 80%;
   filter: grayscale(100%);
-  /* Converts the image to black and white */
 }
 
 .footer-zppsu-lg {
@@ -385,7 +371,6 @@ footer {
   object-fit: cover;
   opacity: 80%;
   filter: grayscale(100%);
-  /* Converts the image to black and white */
 }
 
 .socmed i {
@@ -404,7 +389,6 @@ button {
   width: -moz-max-content;
   width: max-content;
   background-color: #8b2c2c;
-  /* Maroon color */
   color: #fff;
   border: none;
   margin: 15px 0px 30px 30px;
@@ -419,8 +403,13 @@ button:hover {
 }
 button:active {
   background-color: #721f1f;
-  /* Darker maroon for active state */
   transform: scale(0.95);
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #ffffff !important;
+  color: #8b2c2c !important;
 }
 
 .body-content {
@@ -590,11 +579,8 @@ button:active {
 
 .statements {
   background-color: #8b2c2c;
-  /* Add this line */
   background-size: cover;
-  /* Ensure the image covers the entire area */
   background-position: center;
-  /* Center the image */
   background-attachment: fixed;
   width: 100%;
   height: -moz-max-content;
@@ -740,7 +726,6 @@ button:active {
 }
 .content2 .slides img {
   width: 10%;
-  /* Adjust based on the number of images */
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
@@ -778,13 +763,11 @@ button:active {
   }
 }
 
-/* General Styles for Mobile and Tablet */
 body {
   font-size: 16px;
   line-height: 1.5;
 }
 
-/* Mobile (max-width: 768px) */
 @media screen and (max-width: 768px) {
   .sk-posts-masonry .sk-post-item {
     width: 100% !important;
@@ -926,7 +909,6 @@ body {
     color: var(--primary-color);
     font-weight: 900;
   }
-  /* Base styles */
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -945,7 +927,6 @@ body {
     border-radius: 3px !important;
     cursor: pointer;
   }
-  /* Dropdown styles */
   .dropdown-content {
     display: none;
     position: absolute;
@@ -959,7 +940,6 @@ body {
     display: block;
   }
 }
-/* Tablet (max-width: 1024px) */
 @media screen and (max-width: 1024px) {
   nav a {
     padding: 15px 25px;
@@ -1085,7 +1065,6 @@ body {
     order: 1;
   }
 }
-/* Desktop (default styles) */
 @media screen and (min-width: 1025px) {
   .body-content {
     margin: 30px 50px;
@@ -1139,7 +1118,6 @@ body {
   display: flex;
 }
 
-/* Responsive styles */
 @media (max-width: 900px) {
   .navbar-collapse {
     display: none;
